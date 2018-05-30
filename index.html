@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  test / cars -->
+<!-- https://www.sitepoint.com/community/t/column-widths-to-auto-adjust-for-text/107326/2 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Form</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: 100px 1fr 50%;
+            grid-template-rows: 80px  1fr 25px;
+            grid-gap: 10px;
+        }
+
+        header {
+            grid-column: 2 / 3;
+        }
+
+        .row {
+            grid-column: 2 / 3;
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        #logpanel {
+            border: 2px solid green;
+            grid-column: 3 / 4;
+            grid-row: 1 / 4;
+        }
+
+        #log {
+           height: 120px;
+
+            overflow: auto;
+        }
+        
+        #formtable {
+        /* table */
+            display: table;
+        }
+
+        .tablerow {
+        /* tr */
+            display: table-row;
+        }
+
+        .tablecell {
+        /* td */
+            display: table-cell;
+        }
+
+        label {
+            width: 1%;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <u><h1 title="using POST">Ajax Form Sample</h1></u>
+        </header>
+        <div id="formtable" class="row">
+            <div class="tablerow">
+                <label class="tablecell" for='carid'>Car ID:</label>
+                <input id='carid' class="tablecell">
+            </div>
+            <div class="tablerow">
+                <label for='carmake' class="tablecell">Car Make:
+                </label>
+                <input id='carmake' class="tablecell">
+            </div>
+            <div class="tablerow">
+                <label for='carmodel' class="tablecell">Car Model:
+                </label>
+                <input id='carmodel' class=="tablecell">
+
+            </div>
+            <div class="tablerow">
+                <label for='caryear' class="tablecell">Car Year (yyyy):
+                </label>
+                <input id='caryear' class="tablecell">
+            </div>
+        </div>
+        <div id='buttons' class='row'>
+            <button id='getone'>Get Car</button>
+            <button id='getall'>Get List</button>
+            <button id='addCar'>Add Car</button>
+            <button id='updateCar'>Update Car</button>
+            <button id='deleteCar'>Delete Car</button>
+        </div>
+        <div id="logpanel">
+            <h3>Action Log</h3>
+            <hr>
+            <div id="log">
+            </div>
+        </div>
+    </div>
+    <div id="panel"></div>
+    <script src='script.js'></script>
+    <script src='ajax.js'></script>
+    <script src='functions.js'></script>
+    <!-- <script src='bundle.js'></script> -->
+</body>
+
+</html>
